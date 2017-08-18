@@ -1,0 +1,9 @@
+ext.moduleName = "com.emogua.http2.server"
+
+compileJava {
+    inputs.property("moduleName", moduleName)
+    doFirst {
+        options.compileArgs = ["--module-path", classPath.asPath]
+        classPath = files()
+    }
+}
